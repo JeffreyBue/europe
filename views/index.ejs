@@ -1,0 +1,91 @@
+<!DOCTYPE>
+<html lang="en-US">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Europe Trip 2017</title>
+
+		<!-- META -->
+		<meta name="description" content="Not a vacation but an Adventure" />
+	    <meta name="author" content="Jeffrey Bue">
+	    
+	    <meta property="og:site_name" content="Europe Trip">
+	    <meta property="og:url" content="http://europe.jeffreybue.com">
+	    <meta property="og:title" content="Europe Trip 2017">
+	    <meta property="og:description" content="Not a vacation but an Adventure">
+	    <meta property="og:image" content="/images/photos/groupPicCol.jpg">
+
+		<!-- CSS -->
+		<link href="/stylesheets/style.css" type="text/css" rel="stylesheet" />
+
+ 	</head>
+	<body>
+		<main>
+			<h1>Europe Trip 2017</h1>
+			<p>Not A Vacation, But An Adventure!</p>
+			<div class="pagination-wrap">
+				<%	var manyPages = Math.ceil(images.length / perPage); %>
+				<% if(set>1) { %>
+					<a class="pagination prevPage" href="/<%=set-1;%>/">Back</a>
+				<% }; %>
+				<% if(set < manyPages) { %>
+					<a class="pagination nextPage" href="/<%=set+1;%>/">Next</a>
+				<% }; %>
+				<ul>
+					<li><a <%if(set == 1){%>class="active" <%};%>href="/">1</a></li>
+					<%
+						for (i = 2; i <= manyPages; i++) { 
+					%>	    
+						<li><a <%if(i == set){%>class="active" <%};%>href="/<%=i;%>/"><%=i;%></a></li>	
+					<%
+						}				
+					%>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<section id="photos">
+				<%
+					images.every(function(file, indez){
+						var index = indez + 1;
+						if( index < (set*perPage) && index > ((set-1)*perPage)) {
+				%>
+							<a href="/images/photos/<%= file; %>" target="_blank"><img class="grid-item" src="/images/photos/<%= file; %>"/></a>
+				<%
+							return true;
+						}else if( index < (set*perPage) ){
+							return true;
+						}else{
+							return false;
+						};
+					});
+				%>
+				<div class="clear"></div>
+			</section>
+			<div class="pagination-wrap">
+				<% if(set>1) { %>
+					<a class="pagination prevPage" href="/<%=set-1;%>/">Back</a>
+				<% }; %>
+				<% if(set < manyPages) { %>
+					<a class="pagination nextPage" href="/<%=set+1;%>/">Next</a>
+				<% }; %>
+				<ul>
+					<li><a <%if(set == 1){%>class="active" <%};%>href="/">1</a></li>
+					<%
+						var manyPages = Math.ceil(images.length / perPage);
+						for (i = 2; i <= manyPages; i++) { 
+					%>	    
+						<li><a <%if(i == set){%>class="active" <%};%>href="/<%=i;%>/"><%=i;%></a></li>	
+					<%
+						}				
+					%>
+				</ul>
+				<div class="clear"></div>
+			</div>
+		</main>
+		<!-- JS -->
+		<script src="/javascripts/jquery-2.1.4.min.js"></script>
+		<script src="/javascripts/mosaic.js"></script>
+		<script src="/javascripts/imagesLoaded.js"></script>
+		<script src="/javascripts/script.js"></script>
+	</body>
+</html>

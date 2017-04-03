@@ -1,0 +1,86 @@
+body {
+ 	font: 14px garamond, Arial, sans-serif;
+ 	background-color: lightblue;
+ 	padding: 0;
+ 	margin: 0;
+ 	color: lightblue;
+	
+	h1, p {
+		text-align: center;
+	}
+
+	main {
+		margin: 5px;
+		padding: 10px;
+		background-color: black;
+
+		div.clear {
+			clear: both;
+		}
+
+		.pagination-wrap {
+			text-align: center;
+			max-width: 1200px;
+			margin: 0 auto;
+			font-size: 16px;
+			
+			.pagination {
+				display: block;
+				padding: 10px;
+				text-align: center;
+				background-color: lightblue;
+				color: white;
+				text-decoration: none;
+
+				&.prevPage {
+					float: left;
+				}
+
+				&.nextPage {
+					float: right;
+				}
+			}
+
+			ul li {
+				list-style-type: none;
+				display: inline-block;
+
+				a {
+					display: block;
+					padding: 10px 5px;
+					background: white;
+					color: black;
+					text-decoration: none;
+
+					&.active {
+						background: lightblue;
+						color: white;
+					}
+
+					&:hover {
+						background: lightblue;
+						color: white;
+					}
+				}
+			}
+		}
+
+		section#photos {
+			position: relative;
+			min-height: 200px;
+			text-align: center;
+			max-width: 1200px;
+			margin: 0 auto;
+			margin-top: 30px;
+			border-top: 3px solid lightblue;
+			border-bottom: 3px solid lightblue;
+			padding: 10px 0;
+
+			img {
+				float: left;
+				width: 300px;
+			}
+		}
+	}
+}
+
