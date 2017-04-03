@@ -6,4 +6,8 @@ $(document).ready(function(){
 			  itemSelector: '.grid-item'
 	  });
 	});
+
+	lightbox.option({
+      'maxWidth': 700
+    });
 });
