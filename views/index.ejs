@@ -26,10 +26,10 @@
 			<div class="pagination-wrap">
 				<%	var manyPages = Math.ceil(images.length / perPage); %>
 				<% if(set>1) { %>
-					<a class="pagination prevPage" href="/<%=set-1;%>/">Back</a>
+					<a class="pagination prevPage" href="/<%=parseInt(set)-1;%>/">Back</a>
 				<% }; %>
 				<% if(set < manyPages) { %>
-					<a class="pagination nextPage" href="/<%=set+1;%>/">Next</a>
+					<a class="pagination nextPage" href="/<%=parseInt(set)+1;%>/">Next</a>
 				<% }; %>
 				<ul>
 					<li><a <%if(set == 1){%>class="active" <%};%>href="/">1</a></li>
@@ -63,10 +63,10 @@
 			</section>
 			<div class="pagination-wrap">
 				<% if(set>1) { %>
-					<a class="pagination prevPage" href="/<%=set-1;%>/">Back</a>
+					<a class="pagination prevPage" href="/<%=parseInt(set)-1;%>/">Back</a>
 				<% }; %>
 				<% if(set < manyPages) { %>
-					<a class="pagination nextPage" href="/<%=set+1;%>/">Next</a>
+					<a class="pagination nextPage" href="/<%=parseInt(set)+1;%>/">Next</a>
 				<% }; %>
 				<ul>
 					<li><a <%if(set == 1){%>class="active" <%};%>href="/">1</a></li>
