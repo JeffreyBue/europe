@@ -40,27 +40,42 @@ body {
 				&.nextPage {
 					float: right;
 				}
+
+				@media(max-width: 600px) {
+					&.prevPage, &.nextPage {
+						float: none;
+						margin-bottom: 5px;
+					}
+				}
 			}
 
-			ul li {
-				list-style-type: none;
-				display: inline-block;
+			ul {
+				padding: 0;
 
-				a {
-					display: block;
-					padding: 10px 5px;
-					background: white;
-					color: black;
-					text-decoration: none;
+				li {
+					list-style-type: none;
+					display: inline-block;
 
-					&.active {
-						background: lightblue;
-						color: white;
-					}
+					a {
+						display: block;
+						padding: 10px 5px;
+						background: white;
+						color: black;
+						text-decoration: none;
 
-					&:hover {
-						background: lightblue;
-						color: white;
+						&.active {
+							background: lightblue;
+							color: white;
+						}
+
+						&:hover {
+							background: lightblue;
+							color: white;
+						}
+
+						@media(max-width: 600px) {
+							margin-bottom: 5px;
+						}
 					}
 				}
 			}
@@ -80,6 +95,10 @@ body {
 			img {
 				float: left;
 				width: 300px;
+
+				@media(max-width: 600px) {
+					width: 100%;
+				}
 			}
 		}
 	}
