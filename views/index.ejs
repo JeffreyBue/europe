@@ -5,6 +5,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Europe Trip 2017</title>
 
+		<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
 		<!-- META -->
 		<meta name="description" content="Not A Vacation, But An Adventure" />
 	    <meta name="author" content="Jeffrey Bue">
@@ -19,6 +22,7 @@
 
 		<!-- CSS -->
 		<link href="/stylesheets/style.css" type="text/css" rel="stylesheet" />
+		<link href="/stylesheets/lightbox.min.css" type="text/css" rel="stylesheet" />
 
  	</head>
 	<body>
@@ -54,7 +58,7 @@
 						var index = indez + 1;
 						if( index < (set*perPage) && index > ((set-1)*perPage)) {
 				%>
-							<a href="/images/photos/<%= file; %>" target="_blank"><img class="grid-item" src="/images/photos/<%= file; %>"/></a>
+							<a data-lightbox="europe" href="/images/photos/<%= file; %>" target="_blank"><img class="grid-item" src="/images/photos/<%= file; %>"/></a>
 				<%
 							return true;
 						}else if( index < (set*perPage) ){
@@ -91,6 +95,7 @@
 		<script src="/javascripts/jquery-2.1.4.min.js"></script>
 		<script src="/javascripts/mosaic.js"></script>
 		<script src="/javascripts/imagesLoaded.js"></script>
+		<script src="/javascripts/lightbox.min.js"></script>
 		<script src="/javascripts/script.js"></script>
 	</body>
 </html>
